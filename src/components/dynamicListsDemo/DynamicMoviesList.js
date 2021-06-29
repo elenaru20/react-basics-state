@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ImprovedCard from './ImprovedCard'; 
+import AddMovie from './AddMovie';
+
  
 class DynamicMoviesList extends Component {
     state = {
@@ -14,6 +16,16 @@ class DynamicMoviesList extends Component {
     toggleMovies = () => {
         this.setState({ showOscarAwarded: !this.state.showOscarAwarded })
     }
+
+    addMovieHandler = (theMovie) => {
+        const moviesCopy = [...this.state.movies]; // copy!
+        
+        moviesCopy.push(theMovie);
+        
+        this.setState({
+          movies: moviesCopy
+        })
+      }
 
     deleteMovieHandler = id => {
         const moviesCopy = [...this.state.movies]; // <== notice the spread operator here! Important, to not mutating the original state! Now we mutate a copy of the state.
@@ -43,6 +55,7 @@ class DynamicMoviesList extends Component {
                 // }
 
                 <div>
+                    <AddMovie addTheMovie={this.addMovieHandler} />
                     {
                         filteredMovies.map(item => {
                             return <ImprovedCard key={item.id} {...item} clickToDelete={() => this.deleteMovieHandler(item.id)} />

@@ -10,6 +10,8 @@ import { listItems, MoviesList } from "./components/ListDemo";
 import DynamicMoviesList from "./components/dynamicListsDemo/DynamicMoviesList.js";
 
 import Warning from './components/Warning';
+
+import TextareaAndSelectTagDemo from './components/dynamicListsDemo/TextareaAndSelectTagDemo';
  
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <hr/>
         <hr/>
         <Warning />
+        <hr/>
+        <TextareaAndSelectTagDemo />
     </div>
   );
 }
