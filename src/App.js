@@ -8,6 +8,8 @@ import Emoji from './components/Emoji';
 import { listItems, MoviesList } from "./components/ListDemo";
 
 import DynamicMoviesList from "./components/dynamicListsDemo/DynamicMoviesList.js";
+
+import Warning from './components/Warning';
  
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
         </div>
         <hr />
         <DynamicMoviesList />
+        <hr/>
+        <hr/>
+        <Warning />
     </div>
   );
 }
